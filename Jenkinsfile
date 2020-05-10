@@ -6,8 +6,6 @@ pipeline{
         stage('git pull'){
             steps{
                 sh '''
-                 cd /var/www
-                 mkdir node-test
                  cd /var/www/node-test/
                  git pull
                  '''
