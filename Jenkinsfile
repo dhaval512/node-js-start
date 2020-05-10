@@ -2,11 +2,10 @@ pipeline{
     agent{
         label'nodejs'
     }
-    }
     stages{
         stage('git pull'){
             steps{
-                 sh '''
+                sh '''
                  cd /var/www
                  mkdir node-test
                  cd /var/www/node-test/
@@ -14,20 +13,20 @@ pipeline{
                  '''
             }
         }
-    stage('build'){
+        stage('build'){
             steps{
-                sh '''
-                cd  /var/www/node-test/
-                sudo npm install
-                '''
+                 sh '''
+                 cd  /var/www/node-test/
+                 sudo npm install
+                 '''
             }
         }
-    stage('deploy'){
+        stage('deploy'){
             steps{
-                sh '''
-                cd /var/www/node-test/
-                sudo npm start
-                '''
+                 sh '''
+                 cd /var/www/node-test/
+                 sudo npm start
+                 '''
             }
         }
     }
