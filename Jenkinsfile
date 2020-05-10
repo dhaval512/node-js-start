@@ -1,5 +1,7 @@
 pipeline{
-    agent none
+    agent{
+        label'masters'
+    }
     stages{
         stage('git pull'){
             steps{
