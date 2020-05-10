@@ -1,6 +1,6 @@
 pipeline{
     agent{
-        label'nodejs'
+        'any'
     }
     stages{
         stage('git pull'){
